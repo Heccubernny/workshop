@@ -17,7 +17,9 @@ class CreateRegistersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('username');
             $table->string('password');
+            $table->string('photo');
             $table->boolean('agree_term')->default(0);
             $table->timestamp('email_verified_at')->time();
             $table->timestamps();

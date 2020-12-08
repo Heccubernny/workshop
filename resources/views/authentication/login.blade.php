@@ -7,8 +7,10 @@
             <div class="fxt-bg-img fxt-none-767" data-bg-image="assets/auth/img/figure/bg5-l.jpg">
                 <div class="fxt-intro">
                     <div class="sub-title">Welcome To</div>
-                    <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">Workshop</a></h1>
-                    <p>Grursus mal suada faci lisis Lorem ipsum dolarorit ametion consectetur elit. Vesti  ulum nec the dumm.</p>
+                    
+                        <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">{{$site_name}}</a></h1>
+
+                    <p>{{ $site_description }}.</p>
                 </div>
             </div>
             <div class="fxt-bg-color">

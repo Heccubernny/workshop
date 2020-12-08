@@ -15,8 +15,8 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('login');
-
+        return register::all();
+        return redirect('authentication.login');
         //
     }
 
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('login');
+        // return view('authentication.login');
         //
     }
 
@@ -42,6 +42,7 @@ class RegisterController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
+            'username'=>'required',
             'password' => 'required'
         ]);
         //
@@ -49,10 +50,12 @@ class RegisterController extends Controller
         $register = New Register([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'username'=> $request->get('username'),
             'password' => $request->get('password'),
-        ]);
+            'photo' => $request->get('photo'),
+        ]); 
         $register->save();
-        return redirect()->route('login')->with('success', 'Data Added successfully');
+        // return redirect()->route('authentication/login')->with('success', 'Data Added successfully');
 
     }
 
@@ -64,6 +67,8 @@ class RegisterController extends Controller
      */
     public function show(register $register)
     {
+
+        
         //
     }
 

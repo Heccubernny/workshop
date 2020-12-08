@@ -25,6 +25,7 @@ class SpeakerController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -35,6 +36,25 @@ class SpeakerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'speaker_name' => 'required',
+            'speaker_image' => 'required',
+            'speaker_description'=>'required',
+           
+        ]);
+        //
+
+        $speaker = New Speaker([
+            'speaker_name' => $request->get('speaker_name'),
+            'speaker_image' => $request->get('speaker_image'),
+            'speaker_description'=> $request->get('speaker_description'),
+        
+            'job_title'=>$request->get('job_title'), 
+            'facebook_link' => $request->get('facebook_link'), 
+            'twitter_link' => $request->get('twitter_link'),            
+            'github_link' => $request->get('github_link')
+        ]); 
+        $speaker->save();
         //
     }
 
@@ -47,6 +67,7 @@ class SpeakerController extends Controller
     public function show(speaker $speaker)
     {
         //
+        
     }
 
     /**

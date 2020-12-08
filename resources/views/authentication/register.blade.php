@@ -10,9 +10,9 @@
             <div class="fxt-bg-img fxt-none-767" data-bg-image="assets/auth/img/figure/bg5-l.jpg">
                 <div class="fxt-intro">
                     <div class="sub-title">Welcome To</div>
-                <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">Workshop</a></h1>
+                <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">{{ $site_name }}</a></h1>
                    
-                    <p>Grursus mal suada faci lisis Lorem ipsum dolarorit ametion consectetur elit. Vesti  ulum nec the dumm.</p>
+                    <p>{{ $site_description }}.</p>
                 </div>
             </div>
             <div class="fxt-bg-color">
@@ -45,7 +45,7 @@
                     @endif
                         
                    
-                <form method="post" {{-- action('RegisterController', ['id'=>1]) --}} action="{{url('login')}}">
+                <form method="post" enctype="multipart/form-data" {{-- action('RegisterController', ['id'=>1]) --}} action="{{('login')}}">
                     {{ csrf_field() }}
                         <div class="form-group fxt-transformY-50 fxt-transition-delay-1">                                                
                             <input type="text" class="form-control" name="name" placeholder="Full Name">
@@ -55,9 +55,21 @@
                             <input type="email" class="form-control" name="email" placeholder="Your Email">
                             <i class="flaticon-envelope"></i>
                         </div>
+                        <div class="form-group fxt-transformY-50 fxt-transition-delay-1">                                                
+                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <i class="flaticon-user"></i>
+                        </div>
                         <div class="form-group fxt-transformY-50 fxt-transition-delay-3">                                                
                             <input type="password" class="form-control" name="password" placeholder="Password">
                             <i class="flaticon-padlock"></i>
+                        </div>
+                        <div class="form-group fxt-transformY-50 fxt-transition-delay-3">
+                            <p>
+                                <i class="fa fa-file-image-o" aria-hidden="true"></i><label for="photo">
+                                    <input type="file" name="photo" id="photo">
+                                    {{-- to use multiple file add multiple to the last part --}}
+                                </label>
+                            </p>
                         </div>
                         <div class="form-group fxt-transformY-50 fxt-transition-delay-4">
                             <div class="fxt-content-between">

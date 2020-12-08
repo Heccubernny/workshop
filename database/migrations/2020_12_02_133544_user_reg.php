@@ -15,7 +15,7 @@ class UserReg extends Migration
     {
         Schema::create('user_reg', function (Blueprint $table) {
         $table->id();
-        $table->
+        $table->string("username");
         $table->timestamps();
         });
     }

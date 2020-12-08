@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class register extends Model
 {
     //
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'username', 'password', 'photo'];
 
     protected $hidden = [
         'password',

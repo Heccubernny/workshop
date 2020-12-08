@@ -13,21 +13,22 @@
     <div class="site-section">
       <div class="container">
         
+      
 
         <div class="row align-items-center speaker">
           <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <img src="assets/images/person_1.jpg" alt="Image" class="img-fluid">
+            <img src={{ $speaker_image }} alt="Image" class="img-fluid">
           </div>
           <div class="col-lg-6 ml-auto">
-            <h2 class="text-white mb-4 name" data-aos="fade-right" data-aos-delay="200">Emely Peters</h2>
+          <h2 class="text-white mb-4 name" data-aos="fade-right" data-aos-delay="200">{{ $speaker_name }}</h2>
             <div class="bio pl-lg-5">
-              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-right" data-aos-delay="300">Web Designer</span>
-              <p class="mb-4" data-aos="fade-right" data-aos-delay="400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error deleniti dolores necessitatibus eligendi. Nesciunt repellendus ab voluptatibus. Minima architecto impedit eaque molestiae dicta quam. Cum ducimus. Culpa distinctio aperiam</p>
+              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-right" data-aos-delay="300">{{ $job_title }}</span>
+              <p class="mb-4" data-aos="fade-right" data-aos-delay="400">{{ $speaker_description }}</p>
               <p data-aos="fade-right" data-aos-delay="500">
-                Follow Emely &mdash;
-                <a href="#" class="p-2"><span class="icon-facebook"></span></a>
-                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
-                <a href="#" class="p-2"><span class="icon-github"></span></a>
+                Follow {{ $speaker_shortname }} &mdash;
+              <a href="#" class="p-2"><span class="icon-facebook"></span>{{ $facebook_link }}</a>
+                <a href="#" class="p-2"><span class="icon-twitter"></span>{{ $twitter_link }}</a>
+                <a href="#" class="p-2"><span class="icon-github"></span>{{ $github_link }}</a>
               </p>
             </div>
           </div>
