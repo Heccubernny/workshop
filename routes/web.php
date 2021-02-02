@@ -45,7 +45,9 @@ Route::view('/buy-tickets', 'buy-tickets');
 Route::get('/contact', 'ContactController@show');
 Route::view('/about', 'about');
 Route::get('/news', 'NewsController@index');
-Route::resource('speakers',  'SpeakerController@index');
+Route::get('speakers',  'SpeakerController@index');
+
+// Route::resource('speakers',  'SpeakerController@index');
 
 
 
