@@ -15,6 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         //
+        return view('news');
     }
 
     /**
@@ -47,6 +48,7 @@ class NewsController extends Controller
     public function show(news $news)
     {
         //
+        return view('news');
     }
 
     /**

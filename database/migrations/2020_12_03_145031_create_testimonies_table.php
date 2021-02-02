@@ -15,6 +15,9 @@ class CreateTestimoniesTable extends Migration
     {
         Schema::create('testimonies', function (Blueprint $table) {
             $table->id();
+            $table->string('testimonies_user');
+            $table->string('testimonies_dp');
+            $table->string('testimonies_testimony');
             $table->timestamps();
         });
     }

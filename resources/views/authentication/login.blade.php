@@ -22,7 +22,16 @@
                     </div>
                 </div>
                 <div class="fxt-form">
-                    <form method="POST">
+                    @if ($errors->any())
+                        <div class="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="dashboard">
                         <div class="form-group fxt-transformY-50 fxt-transition-delay-1">                                                
                             <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
                             <i class="flaticon-envelope"></i>

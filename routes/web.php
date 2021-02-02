@@ -21,8 +21,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+
 // Route::get('/hello', 'UserController@hello');
 // Route::view('hello', 'hello');
+
     
 
 Route::get('hello', function () {
@@ -36,6 +38,17 @@ Route::get('/401', function(){
     return view('errors.401');
 });
 
+
+Route::view('/alert', 'components.alert');
+
+Route::view('/buy-tickets', 'buy-tickets');
+Route::get('/contact', 'ContactController@show');
+Route::view('/about', 'about');
+Route::get('/news', 'NewsController@index');
+Route::resource('speakers',  'SpeakerController');
+
+
+
 // Route::get('/components/alert', function () {
 //     return view('components.alert');
 // });
@@ -44,42 +57,29 @@ Route::get('/401', function(){
 //     ->name('Hotel9jaImage');
 // )};
 
-Route::view('/alert', 'components.alert');
 
-Route::view('/buy-tickets', 'buy-tickets');
-Route::view('/contact', 'contact');
-Route::view('/about', 'about');
-Route::view('/news', 'news');
-Route::view('/speakers', 'speakers');
-Route::get('speakers', function () {
-    $speaker_name = DB::table('speakers')->get('speaker_name');
-    $speaker_image = DB::table('speakers')->get('speaker_image');
-    $job_title = DB::table('speakers')->get('job_title');
-    $speaker_description = DB::table('speakers')->get('speaker_description');
-    $speaker_shortname = DB::table('speakers')->get('speaker_name');
-    $facebook_link = DB::table('speakers')->get('facebook_link');
-    $twitter_link = DB::table('speakers')->get('twitter_link');
-    $github_link = DB::table('speakers')->get('github_link');
+//Route::view('/speakers', 'speakers');
+// Route::get('speakers', function () {
+  //  $speaker = DB::table('speakers')->get();
+    //return view('speakers', [
+       // 'speaker' => $speaker
+    //]);
+// });
 
-    return view('speakers', compact(['speaker_name', 'job_title','speaker_description', 'speaker_image', 'speaker_shortname', 'facebook_link', 'twitter_link', 'github_link']));
-});
+Route::get('speake', 'SpeakerController@program');
+// Route::resource('single_speakers/{id}', 'SingleController');
 // Route::view('/welcome', 'welcome');
-Route::get('login', function () {
-    $site_name = 'Workshop';
-    $site_description = 'You are highly welcome to our conference Authentication page';
-    return view('authentication.login', compact(['site_name', 'site_description']));
-});
-Route::get('register', function () {
-    $site_name = 'Workshop';
-    $site_description = 'You are highly welcome to our conference Authentication page';
-    return view('authentication.register', compact(['site_name', 'site_description']));
-});
+// Route::get('login', function () {
+//     return view('authentication.login', compact(['site_name', 'site_description']));
+
+Route::get('register',  'RegisterController@store');
+
 Route::view('/forgot', 'authentication.forgot_password');
 Route::view('/otp', 'otp');
 
+Route::post('dashboard');
+
 Route::get('index', function () {
-    // $site_name = 'Workshop';
-    // $site_description = 'You are highly welcome to our conference Authentication page';
     return view('index');
 });
 
@@ -128,21 +128,21 @@ Route::resource('authentication', 'RegisterController');
 // });
 
 
-Route::post('index', function (Request $request) {
-    // validate the uploaded file
-    $validation = $request->validate([
-        'photo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
-        // for multiple file uploads
-        // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
-    ]);
-    $file = $validation['photo']; // get the validated file
-    $extension = $file->getClientOriginalExtension();
-    $filename  = 'profile-photo-' . time() . '.' . $extension;
-    $path = $file->storeAs('photos', $filename);
-    $request->file('photo')->store('photos', 's3');
-    dd($path);
+// Route::post('index', function (Request $request) {
+//     // validate the uploaded file
+//     $validation = $request->validate([
+//         'photo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+//         // for multiple file uploads
+//         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+//     ]);
+//     $file = $validation['photo']; // get the validated file
+//     $extension = $file->getClientOriginalExtension();
+//     $filename  = 'profile-photo-' . time() . '.' . $extension;
+//     $path = $file->storeAs('photos', $filename);
+//     $request->file('photo')->store('photos', 's3');
+//     dd($path);
 
-});
+// });
 
 // Route::get('mail', function () {
 //     $email = '46018609d3-ace66c@inbox.mailtrap.io';

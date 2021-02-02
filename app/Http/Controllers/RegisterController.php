@@ -15,8 +15,8 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return register::all();
-        return redirect('authentication.login');
+        // return register::all();
+        return view('authentication.register');
         //
     }
 
@@ -55,7 +55,8 @@ class RegisterController extends Controller
             'photo' => $request->get('photo'),
         ]); 
         $register->save();
-        // return redirect()->route('authentication/login')->with('success', 'Data Added successfully');
+        // return redirect()->route('authentication.login')->with('success', 'Data Added successfully');
+        return redirect('authentication.login')->with('success', 'Data Added Successfully');
 
     }
 

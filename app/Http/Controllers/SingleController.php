@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\testimony;
 use Illuminate\Http\Request;
+use App\speaker;
 
-class TestimonyController extends Controller
+class SingleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
+        $speaker  = Speaker::find($id);
+        return view('speakers')->with('speaker', $speaker);
     }
 
     /**
@@ -41,21 +43,23 @@ class TestimonyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\testimony  $testimony
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(testimony $testimony)
+    public function show($id)
     {
         //
+        // $speaker  = Speaker::find($id);
+        // return view('speakers')->with('speaker', $speaker);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\testimony  $testimony
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(testimony $testimony)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +68,10 @@ class TestimonyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\testimony  $testimony
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, testimony $testimony)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +79,10 @@ class TestimonyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\testimony  $testimony
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(testimony $testimony)
+    public function destroy($id)
     {
         //
     }

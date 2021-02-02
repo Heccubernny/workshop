@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Xmee | Login and Register Form Html Templates</title>
+    <title>{{ config('app.name')}} | Login and Register Form Html Templates</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -22,3 +22,4 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url('assets/auth/style.css') }}">
 </head>
+

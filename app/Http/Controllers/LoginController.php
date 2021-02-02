@@ -22,13 +22,13 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'username'=>'required',
-            'password' => 'required'
+            'email'=>'required',
+            'password' => 'required|min:8'
         ]);
         //
 
         $login = New Login([
-            'username'=> $request->get('username'),
+            'email'=> $request->get('email'),
             'password' => $request->get('password'),
         ]); 
         $login->save();

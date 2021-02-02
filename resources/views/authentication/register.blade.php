@@ -10,9 +10,9 @@
             <div class="fxt-bg-img fxt-none-767" data-bg-image="assets/auth/img/figure/bg5-l.jpg">
                 <div class="fxt-intro">
                     <div class="sub-title">Welcome To</div>
-                <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">{{ $site_name }}</a></h1>
+                <h1><a href="{{ url('index', []) }}" class="switcher-text switcher-text1 text-white">site name</a></h1>
                    
-                    <p>{{ $site_description }}.</p>
+                    <p>site description.</p>
                 </div>
             </div>
             <div class="fxt-bg-color">
@@ -24,6 +24,8 @@
                     </div>
                 </div>
                 
+                @include('inc.messages')
+
                 <div class="fxt-form">
                     @if(count($errors) > 0)
                         <div class='alert alert-danger'>

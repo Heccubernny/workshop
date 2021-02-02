@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\program;
 use Illuminate\Http\Request;
 
-class ProgramController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,21 +40,23 @@ class ProgramController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\program  $program
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(program $program)
+    public function show()
     {
         //
+        return view('contact');
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\program  $program
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(program $program)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +65,10 @@ class ProgramController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\program  $program
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, program $program)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +76,10 @@ class ProgramController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\program  $program
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(program $program)
+    public function destroy($id)
     {
         //
     }
