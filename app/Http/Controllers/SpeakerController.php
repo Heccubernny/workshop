@@ -116,7 +116,7 @@ class SpeakerController extends Controller
     {
         //
         // $speaker  = Speaker::find($id);
-        // return view('speakers')->with('speaker', $speaker);
+        // return view('speakers.speakers')->with('speaker', $speaker);
        
         
     }
