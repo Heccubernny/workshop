@@ -44,7 +44,7 @@
                     <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                       <li class="active"><a href="{{ url('index') }}">Home</a></li>
                       <li><a href="{{ url('about') }}">About Us</a></li>
-                      <li><a href="{{ url('speakers') }}">Speakers</a></li>
+                      <li><a href="{{ url('speakers.speakers') }}">Speakers</a></li>
                       <li><a href="{{ url('news') }}">News</a></li>
                       <li><a href="{{ url('contact') }}">Contacts</a></li>
                       <li class="cta"><a href="{{ url('buy-tickets') }}">Buy Tickets</a></li>
