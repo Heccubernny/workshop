@@ -74,7 +74,7 @@ Route::get('speake', 'SpeakerController@program');
 // Route::get('login', function () {
 //     return view('authentication.login', compact(['site_name', 'site_description']));
 
-Route::get('register',  'RegisterController@store');
+// Route::get('register',  'RegisterController@store');
 
 Route::view('/forgot', 'authentication.forgot_password');
 Route::view('/otp', 'otp');
@@ -85,7 +85,7 @@ Route::get('index', function () {
     return view('index');
 });
 
-Route::resource('authentication', 'RegisterController');
+Route::resource('register', 'RegisterController');
 
 // Route::resource('index', 'LoginController');
 
