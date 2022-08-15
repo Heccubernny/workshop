@@ -48,9 +48,9 @@ class SingleController extends Controller
      */
     public function show($id)
     {
-        //
-        // $speaker  = Speaker::find($id);
-        // return view('speakers')->with('speaker', $speaker);
+        
+        $speaker  = Speaker::find($id);
+        return view('speakers')->with('speaker', $speaker);
     }
 
     /**
